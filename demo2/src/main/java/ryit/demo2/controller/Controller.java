@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     @RequestMapping("/get")
     public void get(){
-      log.info("get开始了");
+      log.info("get马上就开始了");
     }
 }
