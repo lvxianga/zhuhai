@@ -31,11 +31,11 @@ public class StudentService {/*
     @Autowired
     StudentInterface studentInterface;
 
-    @Transactional
-    public int insertStudent(Student student){
-        int num = studentInterface.addStudent(student);
-
-        int num2 = studentInterface.updateStudent(student);
-        return num+num2;
-    }
+//    @Transactional
+//    public int insertStudent(Student student){
+//        int num = studentInterface.addStudent(student);
+//
+//        int num2 = studentInterface.updateStudent(student);
+//        return num+num2;
+//    }
 }

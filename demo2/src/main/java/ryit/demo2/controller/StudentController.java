@@ -28,42 +28,50 @@ import static com.alibaba.fastjson.JSONObject.*;
 @RestController
 public class StudentController {
 
-    @RequestMapping("/lambda")
-    public void lambda(){
-        MyLambdaInterface myLambdaInterface = num->{
-            HashMap<String,String> hashMap = new HashMap<>();
-            hashMap.put("1","吕巷");
-            hashMap.put("2","蒋小杰");
-            return hashMap.get(num);
-        };
-       String hashMap = myLambdaInterface.getStudent("1");
-//        hashMap.forEach((String key,String value)->{
-            log.info("hashMap   {}",hashMap);
-//        });
-    }
-
     @Autowired
     StudentInterface studentInterface;
 
-    @Autowired
-    StudentService studentService;
-
-    @RequestMapping("/getstudent/{id}")
-    public String getStudent(@PathVariable int id) {
-
-        PageHelper.startPage(1, 3);
-        List<Student> list = studentInterface.getStudent(id);
-
-        return list.get(0).toString();
+    @RequestMapping("/getstudent/{s_id}")
+    public String getStudent(@PathVariable int s_id){
+        return studentInterface.getStudent(s_id).toString();
     }
 
-
-    @RequestMapping("/addstudent/{s_name}/{s_birth}/{s_sex}/{s_id}")
-    public int addStudent(Student student){
-        log.info("student的值{}",student.s_riqi);
-
-        return studentService.insertStudent(student);
-    }
+//    @RequestMapping("/lambda")
+//    public void lambda(){
+//        MyLambdaInterface myLambdaInterface = num->{
+//            HashMap<String,String> hashMap = new HashMap<>();
+//            hashMap.put("1","吕巷");
+//            hashMap.put("2","蒋小杰");
+//            return hashMap.get(num);
+//        };
+//       String hashMap = myLambdaInterface.getStudent("1");
+////        hashMap.forEach((String key,String value)->{
+//            log.info("hashMap   {}",hashMap);
+////        });
+//    }
+//
+//    @Autowired
+//    StudentInterface studentInterface;
+//
+//    @Autowired
+//    StudentService studentService;
+//
+//    @RequestMapping("/getstudent/{id}")
+//    public String getStudent(@PathVariable int id) {
+//
+//        PageHelper.startPage(1, 3);
+//        List<Student> list = studentInterface.getStudent(id);
+//
+//        return list.get(0).toString();
+//    }
+//
+//
+//    @RequestMapping("/addstudent/{s_name}/{s_birth}/{s_sex}/{s_id}")
+//    public int addStudent(Student student){
+//        log.info("student的值{}",student.s_riqi);
+//
+//        return studentService.insertStudent(student);
+//    }
 
 
 //    @Autowired

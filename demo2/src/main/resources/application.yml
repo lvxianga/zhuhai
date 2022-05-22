@@ -5,6 +5,8 @@ spring:
     password: 178810373
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
 
 pagehelper:
   helper-dialect: mysql
