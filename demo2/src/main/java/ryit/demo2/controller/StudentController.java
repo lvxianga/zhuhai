@@ -25,7 +25,7 @@ import java.util.List;
 import static com.alibaba.fastjson.JSONObject.*;
 
 @Slf4j
-@RestController
+@RestController("lv")
 public class StudentController {
 
     @Autowired
